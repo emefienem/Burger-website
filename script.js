@@ -1,7 +1,21 @@
 'use strict'; 
 
 //////////////////////////Animations//////////////////
-// Feature
+// Shop page
+window.addEventListener('scroll', () => {
+    const productContent = document.querySelector('.shop-product');
+    const containerP = document.querySelector('#page-header');
+    const containerPHeight = containerP.clientHeight;
+    const scrollPY = window.scrollY;
+    
+    if(scrollPY >= containerPHeight) {
+        productContent.style.opacity = 1;
+        productContent.style.transform = 'translateY(0)';
+    };
+})
+
+// Our Menu page
+// For features
 document.addEventListener('DOMContentLoaded', () => {
     const content = document.getElementById('feature');
 
@@ -9,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     content.style.transform = 'translateX(0)'
 });
 
+//For menu
 window.addEventListener('scroll', () => {
-    //Menu
-    const hiddenContent = document.querySelector('#product1');
+    const hiddenContent = document.querySelector('.menu-product');
     const container = document.querySelector('#feature');
     const containerHeight = container.clientHeight;
     const scrollY = window.scrollY;
@@ -30,16 +44,6 @@ window.addEventListener('scroll', () => {
         repairContent.style.opacity = 1;
         repairContent.style.transform = 'translateY(0)';
     };
-    // Shop page
-    const productContent = document.querySelector('#product1');
-    const containerP = document.querySelector('#page-header');
-    const containerPHeight = containerP.clientHeight;
-    const scrollPY = window.scrollY;
-
-    if(scrollPY >= containerPHeight) {
-        productContent.style.opacity = 1;
-        productContent.style.transform = 'translateY(0)';
-    };
 });
 
 
@@ -52,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+///////////////////////////////////////////////
 
 // For mobile phones(Hamburger)
 const bar = document.getElementById('bar');
@@ -88,11 +93,15 @@ const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
 function toggleDarkMode() {
     if(modeToggle.checked){
-        body.style.backgroundColor = '#808080'
+        body.style.backgroundColor = '#808080';
+        body.style.transition = 'all 1s ease-in-out';
         localStorage.setItem('darkMode', 'true');
+        nav.classList.remove('open')
     } else{
         body.style.backgroundColor = '#fff';
+        body.style.transition = 'all 1s ease-in-out';
         localStorage.setItem('darkMode', 'false');
+        nav.classList.remove('open')
     }
 };
 

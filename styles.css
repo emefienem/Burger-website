@@ -56,6 +56,12 @@ body{
     left: 0;
 }
 
+#header a{
+    text-decoration: none;
+    color: #088178;
+    font-size: 25px;
+}
+
 #navbar{
     display: flex;
     align-items: center;
@@ -228,6 +234,15 @@ body{
 
 #product1{
     text-align: center;
+}
+
+.menu-product{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-in-out;
+}
+
+.shop-product{
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s ease-in-out;
@@ -741,8 +756,8 @@ button.normal{
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+    -webkit-transition: 1s;
+    transition: all 1s ease-in-out;
 }
 
 .slider::before{
@@ -960,7 +975,7 @@ button.normal{
 }
    
 #links a{
-    color: red;
+    color: #088178;
 }
    
 .store-link{
@@ -1260,10 +1275,6 @@ hr{
     #links{
         display: flex;
         flex-direction: column;
-    }
-       
-    #links a{
-        color: red;
     }
        
     .store-link{
