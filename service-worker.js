@@ -7,6 +7,7 @@ const urlsToCache = [
   '/contact.html',
   '/cart.html',
   '/about.html',
+  'offline.html',
   '/styles.css',
   '/script.js',
   'images/offline-logo.png'
@@ -24,7 +25,7 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
       return response || fetch(event.request).catch(() => {
-        return caches.match('images/offline-logo.png')
+        return caches.match('offline.html')
       });
     })
   );
